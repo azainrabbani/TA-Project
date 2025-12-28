@@ -1,0 +1,10 @@
+{
+  "states": ["q0", "q1"],
+  "start_state": "q0",
+  "accept_states": ["q0"],
+  "start_stack_symbol": "Z",
+  "transitions": [
+    {"from": "q0", "input": "a", "pop": "Z", "push": ["Z", "X"], "to": "q1"},
+    {"from": "q1", "input": "a", "pop": "X", "push": ["Z"], "to": "q0"}
+  ]
+}

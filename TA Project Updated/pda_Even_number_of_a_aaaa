@@ -1,0 +1,23 @@
+// PDA Computation Path
+digraph {
+	dpi=300 rankdir=LR size="16,10"
+	node [fontname=Arial fontsize=14 shape=circle style=filled]
+	edge [fontname=Arial fontsize=12]
+	start [label="q₀" fillcolor=lightgreen fontsize=16 shape=circle style="filled,bold"]
+	q1 [label="q1\na" fillcolor=lightblue fontsize=14 style=filled]
+	q2 [label="q2\na" fillcolor=lightblue fontsize=14 style=filled]
+	q3 [label="q3\na" fillcolor=lightblue fontsize=14 style=filled]
+	q4 [label="q4\na" fillcolor=lightblue fontsize=14 style=filled]
+	F [label="F ✓" fillcolor=green fontcolor=white fontsize=18 shape=doublecircle style="filled,bold"]
+	start -> q1 [label="a,$/A" color=blue fontsize=12]
+	q1 -> q2 [label="a,A/ε" color=blue fontsize=12]
+	q2 -> q3 [label="a,$/A" color=blue fontsize=12]
+	q3 -> q4 [label="a,A/ε" color=blue fontsize=12]
+	q4 -> F [label="ε,$/ε" color=green fontsize=12]
+	tape [label="Input: \"aaaa\"" fillcolor=orange fontcolor=white shape=box style=filled]
+	lang [label="Language: Even number of a" fillcolor=lightgrey shape=box style=filled]
+	result [label="Result: ACCEPTED ✓" fillcolor=green fontcolor=white shape=box style="filled,bold"]
+	tape -> start [style=invis]
+	lang -> tape [style=invis]
+	result -> lang [style=invis]
+}
